@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>FOX Kids Plant | Canadian Kids Television</title>
+<style>
+:root{--ink:#0b1220;--panel:#17243a;--line:#34445e;--gold:#ffd12f;--green:#6cc56b;--muted:#b4c1d5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:#f8fafc;font-family:Arial,Helvetica,sans-serif}
+header{position:sticky;top:0;z-index:20;background:#080e18ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:13px clamp(16px,4vw,54px);display:flex;justify-content:space-between;align-items:center;gap:18px}
+.logo{font-weight:1000;font-size:clamp(20px,3vw,29px);letter-spacing:-1.4px}.logo .fox{color:var(--gold)}.logo .plant{color:var(--green)}
+nav{display:flex;gap:17px;flex-wrap:wrap}nav a{color:#e8eef8;text-decoration:none;font-size:13px;font-weight:bold}nav a:hover{color:var(--gold)}
+main{max-width:1280px;margin:auto;padding:24px clamp(14px,4vw,50px) 60px}
+.hero{border:1px solid #42516c;border-radius:13px;overflow:hidden;padding:clamp(28px,6vw,65px);background:radial-gradient(circle at 82% 20%,#75c95c55,transparent 25%),radial-gradient(circle at 72% 90%,#ffcf3155,transparent 30%),linear-gradient(120deg,#173c68,#28305f 55%,#245c50);position:relative}
+.hero:after{content:"CANADA";position:absolute;right:2%;bottom:-24px;font-size:clamp(70px,15vw,180px);font-weight:1000;color:#ffffff0b;letter-spacing:-8px}
+.eyebrow{font-size:11px;letter-spacing:2.4px;color:var(--gold);font-weight:900;text-transform:uppercase}.hero h1{font-size:clamp(40px,7vw,76px);line-height:.95;letter-spacing:-3px;margin:15px 0;max-width:800px}.hero p{max-width:660px;color:#e0e8f4;line-height:1.65;font-size:16px}.cta{display:inline-block;margin-top:10px;padding:12px 17px;background:var(--gold);color:#101010;text-decoration:none;font-size:12px;font-weight:900;border-radius:4px}
+.ticker{margin:16px 0 25px;border:1px solid var(--line);background:#121e31;padding:11px 14px;border-radius:7px;display:flex;gap:10px;align-items:center;font-size:12px;color:var(--muted)}.ticker strong{color:var(--gold);white-space:nowrap}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:34px 0 15px}.section-head h2{font-size:21px;margin:0;border-left:5px solid var(--gold);padding-left:12px}.section-head small{color:var(--muted)}
+.columns{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.8fr);gap:16px;align-items:start}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}.panel-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}.panel-head h3{font-size:15px;margin:0}
+.onair{background:#bf3030;border-radius:4px;padding:5px 8px;font-size:10px;font-weight:900;letter-spacing:1px}
+.screen{aspect-ratio:16/9;background:linear-gradient(135deg,#102b4e,#26305b 55%,#235446);display:grid;place-items:center;position:relative;overflow:hidden}.screen video,.screen iframe{width:100%;height:100%;border:0;background:#000}.screen iframe{position:absolute;inset:0}.screen-art[hidden]{display:none}.screen-art{text-align:center;padding:20px}.screen-art .big{font-size:clamp(28px,5vw,55px);font-weight:1000;letter-spacing:-2px}.screen-art .big span:first-child{color:var(--gold)}.screen-art .big span:last-child{color:var(--green)}.screen-art p{font-size:11px;letter-spacing:3px;color:#dce7f5;font-weight:bold}.bug{position:absolute;right:12px;top:12px;background:#09111dcc;border:1px solid var(--gold);border-radius:4px;padding:7px 9px;font-size:10px;font-weight:900;pointer-events:none}.bug b{color:var(--gold)}
+.player-note{padding:12px 15px;color:var(--muted);font-size:12px;line-height:1.5}.controls{display:flex;gap:8px;flex-wrap:wrap;padding:12px 15px;border-top:1px solid var(--line)}
+button,.filelabel{background:#293a55;border:1px solid #536581;color:#fff;padding:9px 12px;border-radius:5px;font-size:11px;font-weight:800;cursor:pointer}button:hover,.filelabel:hover{filter:brightness(1.18)}button.primary{background:var(--gold);border-color:var(--gold);color:#111}
+.guide{width:100%;border-collapse:collapse}.guide th,.guide td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-size:12px}.guide th{color:var(--gold);font-size:10px;letter-spacing:1px;text-transform:uppercase}.guide td:first-child{font-weight:bold;white-space:nowrap}.guide tr:last-child td{border:0}
+.searchbar{display:flex;gap:9px;margin-bottom:12px}.searchbar input{flex:1;min-width:0;background:#101a2a;border:1px solid #52617a;border-radius:5px;padding:11px;color:white}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.filters button.active{background:var(--gold);border-color:var(--gold);color:#111}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px}.show{border:1px solid var(--line);background:var(--panel);border-radius:8px;overflow:hidden}.poster{height:86px;display:grid;place-items:center;text-align:center;padding:10px;background:linear-gradient(135deg,#246b66,#315d91);font-size:15px;font-weight:900}.show:nth-child(3n+2) .poster{background:linear-gradient(135deg,#915b35,#624477)}.show:nth-child(3n) .poster{background:linear-gradient(135deg,#315d91,#4c4384)}.show-info{padding:11px}.show-info strong{font-size:13px}.show-info p{font-size:10px;color:var(--muted);line-height:1.4;margin:6px 0 0}.tag{display:inline-block;color:#132013;background:#a9e39d;border-radius:3px;padding:3px 5px;font-size:9px;font-weight:900;margin-top:7px}
+.provider-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.provider-link{display:inline-block;padding:8px 9px;background:#263a55;color:#fff;text-decoration:none;border:1px solid #536581;border-radius:4px;font-size:9px;font-weight:900}.provider-link:hover{filter:brightness(1.2)}.provider-link.roku{border-color:#6b5ce7}.provider-link.tubi{border-color:#e6a12c}.provider-link.prime{border-color:#18a9c9}.embed-status{padding:12px 15px;color:var(--muted);font-size:11px;line-height:1.5;border-top:1px solid var(--line)}.yt-panel-copy{padding:16px;color:var(--muted);font-size:12px;line-height:1.6}
+.notice{background:#17243a;border:1px solid var(--line);border-radius:8px;padding:15px;color:var(--muted);font-size:12px;line-height:1.6}
+footer{background:#070c14;text-align:center;padding:27px 16px;color:#aab6c9;font-size:11px;line-height:1.7}
+
+.live-strip{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 8px;padding:12px 14px;background:#111d30;border:1px solid var(--line);border-radius:8px}
+.live-dot{width:9px;height:9px;background:#ef4444;border-radius:50%;box-shadow:0 0 0 4px #ef444433}.live-strip strong{font-size:11px;letter-spacing:1px}.live-strip span{font-size:12px;color:var(--muted)}
+.now-next{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}.now-card{padding:14px;background:#17243a;border:1px solid var(--line);border-radius:8px}.now-card small{display:block;color:var(--gold);font-size:9px;font-weight:900;letter-spacing:1.5px;margin-bottom:7px}.now-card strong{font-size:15px}.now-card p{margin:5px 0 0;color:var(--muted);font-size:11px}
+.schedule-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line);color:var(--muted);font-size:11px}.schedule-tools button{padding:7px 10px}
+.guide tr.current{background:#263a50;outline:1px solid #ffd12f55}.guide tr.current td:first-child:before{content:"▶ ";color:var(--gold)}
+.channel-ident{position:absolute;left:12px;bottom:12px;background:#09111dcc;border:1px solid #ffffff44;border-radius:4px;padding:7px 9px;font-size:10px;font-weight:900;letter-spacing:.6px}
+@media(max-width:560px){.now-next{grid-template-columns:1fr}.guide th,.guide td{padding:10px 8px;font-size:11px}}
+@media(max-width:780px){header{align-items:flex-start;flex-direction:column}nav{gap:13px}.columns{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<header><div class="logo"><span class="fox">FOX</span> KIDS <span class="plant">PLANT</span></div><nav><a href="#home">Home</a><a href="#watch">Watch</a><a href="#schedule">Schedule</a><a href="#shows">All Shows</a><a href="#about">About</a></nav></header>
+<main>
+<section class="hero" id="home"><div class="eyebrow">A celebration of Canadian kids' television</div><h1>FOX Kids Plant</h1><p>Cartoons, comedy, adventures and unforgettable characters from Canada's television history. Discover Canadian-made children's programming, from classic animation to modern favourites.</p><a class="cta" href="#shows">EXPLORE THE SHOWS</a></section>
+<div class="ticker"><strong>CANADIAN TV VAULT</strong><span>Classic favourites • Canadian creators • Animation & live action</span></div>
+<section class="columns" id="watch">
+<div class="panel"><div class="panel-head"><h3>FOX Kids Plant — Streaming block player</h3><span class="onair">STREAMING BLOCK</span></div>
+<div class="screen" id="videoScreen"><div class="screen-art" id="screenArt"><div class="big"><span>FOX</span> KIDS <span>PLANT</span></div><p>YOUR CANADIAN CARTOON DESTINATION</p></div><div class="bug">FOX KIDS <b>PLANT</b> · 1</div><div class="channel-ident">FOX KIDS PLANT ORIGINAL BLOCK</div></div>
+<div class="player-note"><strong id="featuredTitle">FOX Kids Plant — Channel is ready</strong><br><span id="featuredDescription">A scheduled lineup of Canadian kids’ favourites, with the next programme coming up.</span></div>
+<div class="controls"><button id="clearVideo" type="button">CLEAR SELECTION</button></div><div class="embed-status" id="embedStatus">Select a programme, then choose an authorized provider to check its current availability. Provider playback opens in that service; it cannot be embedded here without a distribution agreement and supported player integration.</div><div class="yt-panel-copy" id="selectedProviders"><strong>CONTENT PROVIDERS</strong><p>Choose a title from the programme guide or library to see the provider destinations.</p></div></div>
+<aside class="panel"><div class="panel-head"><h3>FOX Kids Plant content providers</h3></div><div class="yt-panel-copy"><p><strong>Three content-provider destinations:</strong></p><p>• The Roku Channel<br>• Tubi<br>• Prime Video</p><p>Select a programme and choose a provider to look for it. Availability varies by country, licensing window, and subscription.</p><p><strong>Important:</strong> These services do not provide a general-purpose public player for this independent website to stream their catalogues inside its own page. Playback remains in the provider’s app or website unless a formal distribution agreement and supported player integration are granted.</p></div><div class="panel-head"><h3>Channel information</h3></div><div class="yt-panel-copy">FOX Kids Plant is an independent fan project. Listing a service does not mean a title is currently available there or that FOX Kids Plant has a licence to redistribute it.</div></aside>
+</section>
+<section id="schedule"><div class="section-head"><h2>FOX Kids Plant — Programme guide</h2><small>Daily channel lineup · local time</small></div>
+<div class="live-strip"><span class="live-dot"></span><strong>DAILY PROGRAMME BLOCK</strong><span id="channelClock">Checking local time…</span><span>·</span><span>FOX Kids Plant / Channel 1</span></div>
+<div class="now-next"><div class="now-card"><small>ON NOW</small><strong id="nowTitle">Franklin</strong><p id="nowTime">6:00 AM – 6:30 AM</p></div><div class="now-card"><small>COMING UP NEXT</small><strong id="nextTitle">Little Bear</strong><p id="nextTime">6:30 AM</p></div></div>
+<div class="panel"><div class="schedule-tools"><span>DAILY LINEUP</span><span id="scheduleStatus">Programme guide</span><button type="button" id="jumpNow" class="primary">TUNE TO ON NOW</button></div><table class="guide"><thead><tr><th>Time</th><th>Programme</th><th>Block</th></tr></thead><tbody id="scheduleRows"></tbody></table></div></section>
+<section id="shows"><div class="section-head"><h2>Canadian programme library</h2><small id="count"></small></div><div class="searchbar"><input id="search" type="search" placeholder="Search Canadian shows..."></div><div class="filters" id="filters"><button class="active" data-filter="All">All</button><button data-filter="Animation">Animation</button><button data-filter="Live action">Live action</button><button data-filter="Preschool">Preschool</button><button data-filter="Comedy">Comedy</button><button data-filter="Adventure">Adventure</button></div><div class="grid" id="grid"></div></section>
+<section id="about"><div class="section-head"><h2>About FOX Kids Plant</h2></div><div class="notice">FOX Kids Plant is an independent, fan-made Canadian children's television project. It is not affiliated with or endorsed by FOX, Fox Kids, or the producers, broadcasters, and rights holders of the programmes listed. Show titles and trademarks belong to their respective owners. The catalogue is a curated starter collection, not a claim to list every Canadian children's programme ever made. Some entries are international co-productions with Canadian production involvement. Provider links lead to The Roku Channel, Tubi, and Prime Video. Availability must be checked on each service; FOX Kids Plant does not host or redistribute their videos.</div></section>
+</main>
+<footer><strong>FOX KIDS PLANT</strong><br>A fan-made celebration of Canadian children's television.<br>Not an official FOX or Fox Kids service.</footer>
+<script>
+const shows=[
+["ReBoot","Animation","1994–2001","Mainframe Entertainment; Canadian CGI landmark"],
+["Stickin' Around","Animation","1996–1998","Nelvana; Canadian animated comedy"],
+["6teen","Comedy","2004–2010","Nelvana and Fresh TV"],
+["Being Ian","Comedy","2005–2008","Studio B Productions and Nelvana"],
+["Total Drama","Comedy","2007–present","Fresh TV; animated reality-show parody"],
+["Total Drama Island","Comedy","2007","Fresh TV"],
+["Total Drama Action","Comedy","2009","Fresh TV"],
+["Total Drama World Tour","Comedy","2010","Fresh TV"],
+["Stoked","Comedy","2009–2013","Fresh TV"],
+["Ruby Gloom","Animation","2006–2008","Nelvana"],
+["Braceface","Animation","2001–2006","Nelvana"],
+["Jacob Two-Two","Adventure","2003–2006","Nelvana"],
+["Martin Mystery","Adventure","2003–2006","Marathon Media; Canadian co-production"],
+["What's with Andy?","Comedy","2001–2007","CinéGroupe"],
+["The Kids in the Hall: Death Comes to Town","Comedy","2010","Canadian live-action comedy"],
+["The Raccoons","Animation","1985–1992","Canadian animated series"],
+["Franklin","Preschool","1997–2004","Nelvana; Canadian production"],
+["Little Bear","Preschool","1995–2003","Nelvana"],
+["Babar","Animation","1988–2001","Nelvana; French-Canadian co-production"],
+["Rupert","Animation","1991–1997","Nelvana"],
+["The Busy World of Richard Scarry","Preschool","1994–1997","CINAR and France Animation"],
+["The Babaloos","Preschool","1995–1998","CINAR"],
+["Maggie and the Ferocious Beast","Preschool","2000–2002","Nelvana"],
+["Rolie Polie Olie","Preschool","1998–2006","Nelvana"],
+["Caillou","Preschool","1997–2011","CINAR / Cookie Jar / 9 Story"],
+["The Backyardigans","Preschool","2004–2013","Nelvana; Canadian-American co-production"],
+["The Doodlebops","Live action","2005–2009","Canadian live-action music series"],
+["The Big Comfy Couch","Live action","1992–2006","Canadian preschool series"],
+["Under the Umbrella Tree","Live action","1986–1993","Canadian CBC series"],
+["Groundling Marsh","Live action","1996–1997","Portfolio Entertainment"],
+["The Elephant Show","Live action","1984–1989","Canadian children's music series"],
+["Popular Mechanics for Kids","Live action","1997–2001","Canadian educational series"],
+["Are You Afraid of the Dark?","Live action","1990–2000","Canadian-produced anthology series"],
+["The Adventures of Sam & Max: Freelance Police","Animation","1997–1998","Nelvana; Fox Kids and YTV"],
+["Beast Wars: Transformers","Animation","1996–1999","Mainframe Entertainment"],
+["Beast Machines: Transformers","Animation","1999–2000","Mainframe Entertainment"],
+["Donkey Kong Country","Animation","1997–2000","Nelvana; Canadian-French co-production"],
+["Eek! The Cat","Animation","1992–1997","Nelvana; Canadian-American co-production"],
+["Dog City","Animation","1992–1994","Nelvana"],
+["Birdz","Animation","1998–1999","Nelvana"],
+["Cadillacs and Dinosaurs","Animation","1993–1994","Nelvana"],
+["The NeverEnding Story","Animation","1995–1996","Nelvana; international co-production"],
+["The Adventures of Tintin","Animation","1991–1992","Nelvana and Ellipse; co-production"],
+["Ace Lightning","Live action","2002–2005","Alliance Atlantis; Canadian-British production"],
+["Yvon of the Yukon","Animation","2000–2004","Studio B Productions"],
+["Maggie and the Ferocious Beast","Preschool","2000–2002","Nelvana"],
+["Eckhart","Animation","2000–2002","Cellar Door Productions"],
+["What About Mimi?","Comedy","2000–2002","Decode Entertainment and Studio B"],
+["D'Myna Leagues","Comedy","2000–2003","Studio B Productions"],
+["Being Eve","Live action","2001–2002","Canadian teen drama"],
+["Radio Active","Live action","1998–2001","Canadian teen sitcom"],
+["Student Bodies","Live action","1997–1999","Canadian teen sitcom"],
+["The Zack Files","Live action","2000–2002","Canadian teen science-fiction series"],
+["The Latest Buzz","Live action","2007–2010","Canadian teen sitcom"],
+["Naturally, Sadie","Live action","2005–2007","Canadian teen sitcom"],
+["Life with Boys","Live action","2011–2013","Canadian teen sitcom"],
+["How to Be Indie","Live action","2009–2011","Canadian teen sitcom"],
+["Wingin' It","Live action","2010–2013","Canadian teen sitcom"],
+["The Stanley Dynamic","Live action","2014–2017","Canadian family sitcom"],
+["The Adventures of Napkin Man!","Preschool","2013–2017","Breakthrough Entertainment"],
+["Doki","Preschool","2013–2019","Portfolio Entertainment; international co-production"],
+["Almost Naked Animals","Comedy","2011–2013","9 Story Media Group"],
+["The Amazing Adrenalini Brothers","Adventure","2006–2008","Studio B Productions; co-production"],
+["6teen","Comedy","2004–2010","Nelvana and Fresh TV"],
+["Detentionaire","Adventure","2011–2014","Nelvana"],
+["Sidekick","Comedy","2010–2013","Nelvana"],
+["Jimmy Two-Shoes","Comedy","2009–2011","Breakthrough Entertainment; co-production"],
+["The Dating Guy","Comedy","2009–2012","CinéGroupe"],
+["Producing Parker","Comedy","2009–2011","CinéGroupe"],
+["The Tofus","Animation","2004–2005","CINAR; co-production"],
+["The Save-Ums!","Preschool","2003–2006","CINAR and Decode Entertainment"],
+["Seven Little Monsters","Preschool","2000–2003","Nelvana"],
+["Pippi Longstocking","Animation","1997–1998","Nelvana; international co-production"],
+["The Little Lulu Show","Animation","1995–1999","CINAR"],
+["Tales from the Cryptkeeper","Animation","1993–1999","Nelvana"],
+["The Magic School Bus","Animation","1994–1997","Nelvana; Canadian-American co-production"]
+];
+const grid=document.querySelector("#grid"),count=document.querySelector("#count"),search=document.querySelector("#search");// The guide is a sample daily block schedule. Episodes are not fabricated or bundled.
+const lineup=[
+ {time:"6:00 AM",mins:360,show:"Franklin",block:"Little Friends",duration:30},
+ {time:"6:30 AM",mins:390,show:"Little Bear",block:"Little Friends",duration:30},
+ {time:"7:00 AM",mins:420,show:"Rupert",block:"Canadian Classics",duration:30},
+ {time:"7:30 AM",mins:450,show:"ReBoot",block:"Animation Vault",duration:30},
+ {time:"8:00 AM",mins:480,show:"Stickin' Around",block:"Animation Vault",duration:30},
+ {time:"8:30 AM",mins:510,show:"6teen",block:"Teen Scene",duration:30},
+ {time:"9:00 AM",mins:540,show:"Being Ian",block:"Comedy Club",duration:30},
+ {time:"9:30 AM",mins:570,show:"Total Drama",block:"Comedy Club",duration:30},
+ {time:"10:00 AM",mins:600,show:"Jacob Two-Two",block:"Adventure Hour",duration:30},
+ {time:"10:30 AM",mins:630,show:"The Raccoons",block:"Canadian Classics",duration:30},
+ {time:"11:00 AM",mins:660,show:"Ruby Gloom",block:"Animation Vault",duration:30},
+ {time:"11:30 AM",mins:690,show:"Maggie and the Ferocious Beast",block:"Little Friends",duration:30},
+ {time:"12:00 PM",mins:720,show:"The Doodlebops",block:"Music & Fun",duration:30},
+ {time:"12:30 PM",mins:750,show:"The Big Comfy Couch",block:"Little Friends",duration:30},
+ {time:"1:00 PM",mins:780,show:"Being Ian",block:"Comedy Club",duration:30},
+ {time:"1:30 PM",mins:810,show:"Total Drama Island",block:"Comedy Club",duration:30},
+ {time:"2:00 PM",mins:840,show:"Beast Wars: Transformers",block:"Action Zone",duration:30},
+ {time:"2:30 PM",mins:870,show:"The Adventures of Tintin",block:"Adventure Hour",duration:30}
+];
+let active="All";
+const providers=[
+ {name:"THE ROKU CHANNEL",cls:"roku",url:"https://www.roku.com/whats-on/search"},
+ {name:"TUBI",cls:"tubi",url:"https://tubitv.com/"},
+ {name:"PRIME VIDEO",cls:"prime",url:"https://www.primevideo.com/"}
+];
+function chooseShow(show){
+ document.querySelector("#featuredTitle").textContent=show;
+ document.querySelector("#featuredDescription").textContent="Selected for the FOX Kids Plant schedule. Check the providers below for current availability.";
+ document.querySelector("#embedStatus").textContent="Selected programme: "+show+". Choose a provider below and search for this title there. Playback takes place on the provider’s own service.";
+ const holder=document.querySelector("#selectedProviders");holder.innerHTML="";
+ const heading=document.createElement("strong");heading.textContent="CHECK THIS TITLE ON";holder.append(heading);
+ const title=document.createElement("p");title.textContent=show;holder.append(title);
+ const links=document.createElement("div");links.className="provider-links";
+ providers.forEach(provider=>{const a=document.createElement("a");a.className="provider-link "+provider.cls;a.href=provider.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=provider.name;a.setAttribute("aria-label","Open "+provider.name+" to search for "+show);links.append(a);});
+ holder.append(links);document.querySelector("#watch").scrollIntoView({behavior:"smooth",block:"center"});
+}
+function clearVideo(){
+ document.querySelector("#featuredTitle").textContent="FOX Kids Plant — Channel is ready";
+ document.querySelector("#featuredDescription").textContent="A scheduled lineup of Canadian kids’ favourites, with the next programme coming up.";
+ document.querySelector("#embedStatus").textContent="Select a programme, then choose a provider to check its current availability.";
+ document.querySelector("#selectedProviders").innerHTML="<strong>CONTENT PROVIDERS</strong><p>Choose a title from the programme guide or library to see the provider destinations.</p>";
+}
+function render(){const q=search.value.toLowerCase();const list=shows.filter(s=>(active==="All"||s[1]===active)&&s[0].toLowerCase().includes(q));grid.innerHTML="";list.forEach(s=>{const card=document.createElement("article");card.className="show";const poster=document.createElement("div");poster.className="poster";poster.textContent=s[0];const info=document.createElement("div");info.className="show-info";const title=document.createElement("strong");title.textContent=s[0];const desc=document.createElement("p");desc.textContent=s[2]+" · "+s[3];const tag=document.createElement("span");tag.className="tag";tag.textContent=s[1];const link=document.createElement("button");link.type="button";link.textContent="▶ SELECT PROGRAMME";link.addEventListener("click",()=>chooseShow(s[0]));const providerRow=document.createElement("div");providerRow.className="provider-links";providers.forEach(provider=>{const a=document.createElement("a");a.className="provider-link "+provider.cls;a.href=provider.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=provider.name;a.title="Search for "+s[0]+" on "+provider.name;providerRow.append(a)});info.append(title,desc,tag,link,providerRow);card.append(poster,info);grid.append(card)});count.textContent=list.length+" titles shown · curated Canadian collection";if(!list.length)grid.innerHTML='<div class="notice">No matching programmes. Try another search.</div>'}
+function renderGuide(){const tbody=document.querySelector("#scheduleRows");tbody.innerHTML="";lineup.forEach((item,i)=>{const tr=document.createElement("tr");tr.dataset.index=i;const time=document.createElement("td"),name=document.createElement("td"),block=document.createElement("td");time.textContent=item.time;name.textContent=item.show;block.textContent=item.block;tr.append(time,name,block);tr.addEventListener("click",()=>chooseShow(item.show));tr.style.cursor="pointer";tbody.append(tr);});}
+function updateChannel(){const d=new Date(),mins=d.getHours()*60+d.getMinutes();document.querySelector("#channelClock").textContent=d.toLocaleTimeString([], {hour:"numeric",minute:"2-digit"});let idx=lineup.findIndex((x)=>mins>=x.mins&&mins<x.mins+x.duration);const current=idx>=0?lineup[idx]:null;const next=idx>=0?lineup[(idx+1)%lineup.length]:lineup[0];document.querySelector("#nowTitle").textContent=current?current.show:"FOX Kids Plant is off block";document.querySelector("#nowTime").textContent=current?current.time+" · "+current.block:(mins<lineup[0].mins?"The daily block starts at 6:00 AM":"Today’s block has ended");document.querySelector("#nextTitle").textContent=next.show;document.querySelector("#nextTime").textContent=idx>=0?next.time:"Next block · 6:00 AM";document.querySelectorAll("#scheduleRows tr").forEach((r,i)=>r.classList.toggle("current",i===idx));document.querySelector("#scheduleStatus").textContent="Updated " + d.toLocaleTimeString([], {hour:"numeric",minute:"2-digit"});}
+document.querySelector("#filters").addEventListener("click",e=>{const b=e.target.closest("button[data-filter]");if(!b)return;active=b.dataset.filter;document.querySelectorAll(".filters button").forEach(x=>x.classList.toggle("active",x===b));render()});search.addEventListener("input",render);render();renderGuide();updateChannel();setInterval(updateChannel,30000);
+document.querySelector("#clearVideo").addEventListener("click",clearVideo);document.querySelector("#jumpNow").addEventListener("click",()=>{const d=new Date(),mins=d.getHours()*60+d.getMinutes();let idx=lineup.findIndex((x)=>mins>=x.mins&&mins<x.mins+x.duration);if(idx<0)idx=0;chooseShow(lineup[idx].show);});
+</script>
+</body></html>

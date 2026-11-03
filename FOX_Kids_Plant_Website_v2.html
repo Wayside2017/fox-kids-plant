@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="FOX Kids Plant — an independent children's television programme guide.">
+<title>FOX Kids Plant | Programme Guide</title>
+<style>
+:root{--ink:#101827;--ink2:#172338;--panel:#202c40;--line:#35445b;--gold:#f4c52e;--cream:#f7f3e8;--muted:#aebbd0;--blue:#24558a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:#fff;font-family:Arial,Helvetica,sans-serif}
+a{color:inherit}header{position:sticky;top:0;z-index:20;background:#0b1019ed;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px clamp(16px,5vw,70px);display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-weight:950;letter-spacing:-1.2px;font-size:clamp(20px,3vw,29px);white-space:nowrap}.brand b{color:var(--gold)}
+nav{display:flex;gap:18px;flex-wrap:wrap}nav a{text-decoration:none;color:#e8edf5;font-size:13px;font-weight:800}nav a:hover{color:var(--gold)}
+.bug{position:fixed;right:16px;top:82px;z-index:15;background:#111c;padding:9px 12px;border:1px solid var(--gold);border-radius:4px;font-size:11px;font-weight:900;letter-spacing:.7px;box-shadow:0 5px 18px #0005}.bug span{color:var(--gold)}
+.hero{min-height:350px;padding:65px clamp(20px,7vw,100px);display:flex;align-items:center;background:radial-gradient(ellipse at 80% 20%,#d18a3d66,transparent 35%),linear-gradient(115deg,#143b70,#34275f 55%,#873f40);position:relative;overflow:hidden}
+.hero:after{content:"FOX";position:absolute;right:5%;bottom:-55px;font-size:clamp(130px,25vw,330px);font-weight:1000;color:#ffffff0d;line-height:1}
+.hero-copy{max-width:690px;position:relative;z-index:1}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:900;color:var(--gold);text-transform:uppercase}
+h1{font-size:clamp(39px,7vw,68px);line-height:.98;letter-spacing:-2px;margin:13px 0}.hero p{font-size:16px;line-height:1.65;color:#e2e8f2;max-width:590px}
+.cta{display:inline-block;margin-top:12px;background:var(--gold);color:#101010;padding:13px 18px;border-radius:3px;text-decoration:none;font-weight:900;font-size:12px;letter-spacing:.5px}
+main{max-width:1280px;margin:auto;padding:24px clamp(16px,5vw,60px) 55px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:38px 0 18px}.section-head h2{font-size:22px;margin:0;border-left:5px solid var(--gold);padding-left:12px}.section-head small{color:var(--muted)}
+.schedule-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:7px;background:var(--panel)}table{border-collapse:collapse;width:100%;min-width:510px}th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line)}th{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:1px}td{font-size:13px}td:first-child{font-weight:800;white-space:nowrap}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid #53617a;background:#26364e;color:#fff;padding:10px 13px;border-radius:4px;font-weight:800;font-size:11px;cursor:pointer}.filter:hover,.filter.active{background:var(--gold);border-color:var(--gold);color:#111}
+.search-row{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 17px}.search{width:min(100%,440px);padding:12px 14px;border:1px solid #53617a;border-radius:4px;background:var(--ink2);color:white;font-size:14px}.search:focus{outline:2px solid var(--gold);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:7px;overflow:hidden;transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.poster{height:112px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;font-size:17px;font-weight:950;letter-spacing:-.4px;background:linear-gradient(135deg,#287b78,#315d91)}.card:nth-child(3n+2) .poster{background:linear-gradient(135deg,#9c573b,#67477f)}.card:nth-child(3n) .poster{background:linear-gradient(135deg,#315d91,#57418a)}
+.card-info{padding:12px}.card-info h3{font-size:13px;margin:0 0 7px}.card-info p{font-size:11px;color:var(--muted);margin:0}.card-actions{display:flex;justify-content:space-between;align-items:center;margin-top:11px}.tiny{border:1px solid #53617a;background:transparent;color:#fff;border-radius:3px;padding:6px 8px;font-size:10px;font-weight:800;cursor:pointer}.tiny.saved{background:var(--gold);color:#111;border-color:var(--gold)}
+.note{color:#c3cee0;line-height:1.6;font-size:13px;max-width:900px}.provider-links{display:flex;gap:9px;flex-wrap:wrap}.provider-links a{display:inline-block;text-decoration:none;border:1px solid #53617a;background:#26364e;padding:11px 14px;border-radius:4px;font-size:12px;font-weight:800}.provider-links a:hover{background:var(--gold);color:#111}
+.empty{color:var(--muted);padding:25px;background:var(--panel);border-radius:6px;grid-column:1/-1}
+footer{background:#080d15;text-align:center;padding:28px 18px;color:#9caabd;font-size:11px;line-height:1.8}
+@media(max-width:680px){header{align-items:flex-start;flex-direction:column}nav{gap:12px}.hero{min-height:320px}.bug{top:auto;bottom:14px;right:14px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">FOX <b>KIDS PLANT</b></div>
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a><a href="#schedule">Schedule</a><a href="#shows">Shows</a><a href="#networks">Networks</a><a href="#watch">Where to Watch</a>
+  </nav>
+</header>
+<div class="bug" aria-label="On-screen channel identity">FOX <span>KIDS PLANT</span> · 1</div>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">A world of shows, stories and memories</div>
+    <h1>FOX Kids Plant</h1>
+    <p>Explore a family-friendly programme guide celebrating children's television, animation and classic favourites.</p>
+    <a class="cta" href="#schedule">VIEW THE PROGRAMME GUIDE</a>
+  </div>
+</section>
+<main>
+  <section id="schedule">
+    <div class="section-head"><h2>Today's TV Schedule</h2><small>Sample programme lineup</small></div>
+    <div class="schedule-wrap"><table><thead><tr><th>Time</th><th>Programme</th><th>Collection</th></tr></thead>
+    <tbody>
+      <tr><td>6:00 AM</td><td>Postman Pat</td><td>Qubo collection</td></tr>
+      <tr><td>6:30 AM</td><td>Bob the Builder</td><td>Qubo collection</td></tr>
+      <tr><td>7:00 AM</td><td>Rolie Polie Olie</td><td>Qubo collection</td></tr>
+      <tr><td>7:30 AM</td><td>Dragon Tales</td><td>Disney Channel</td></tr>
+      <tr><td>8:00 AM</td><td>The Fairly OddParents</td><td>Nickelodeon</td></tr>
+      <tr><td>8:30 AM</td><td>Ed, Edd n Eddy</td><td>Cartoon Network</td></tr>
+      <tr><td>9:00 AM</td><td>Horrid Henry</td><td>CITV</td></tr>
+      <tr><td>9:30 AM</td><td>Tom and Jerry</td><td>Boomerang</td></tr>
+      <tr><td>10:00 AM</td><td>Kim Possible</td><td>Disney Channel</td></tr>
+      <tr><td>10:30 AM</td><td>Arthur</td><td>Other</td></tr>
+    </tbody></table></div>
+    <p class="note">This is a sample schedule for the project, not a live television broadcast.</p>
+  </section>
+  <section id="networks">
+    <div class="section-head"><h2>Explore Our Networks</h2></div>
+    <div class="filters" id="filters">
+      <button class="filter active" data-filter="All">All Shows</button>
+      <button class="filter" data-filter="Qubo">Qubo</button>
+      <button class="filter" data-filter="Disney Channel">Disney Channel</button>
+      <button class="filter" data-filter="Cartoon Network">Cartoon Network</button>
+      <button class="filter" data-filter="Nickelodeon">Nickelodeon</button>
+      <button class="filter" data-filter="FOX">FOX</button>
+      <button class="filter" data-filter="Boomerang">Boomerang</button>
+      <button class="filter" data-filter="CITV">CITV</button>
+    </div>
+  </section>
+  <section id="shows">
+    <div class="section-head"><h2>Programme Directory</h2><small id="count"></small></div>
+    <div class="search-row"><input id="showSearch" class="search" type="search" placeholder="Search programme titles..." aria-label="Search programme titles"></div>
+    <div class="grid" id="showGrid"></div>
+  </section>
+  <section id="watch">
+    <div class="section-head"><h2>Where to Watch</h2><small>Visit each service to check its catalogue</small></div>
+    <p class="note">FOX Kids Plant is a programme guide, not a streaming service. Availability varies by country and subscription. A listing here does not guarantee that a programme is currently available.</p>
+    <div class="provider-links">
+      <a href="https://www.tubitv.com/" target="_blank" rel="noopener">Tubi</a>
+      <a href="https://therokuchannel.roku.com/" target="_blank" rel="noopener">The Roku Channel</a>
+      <a href="https://www.primevideo.com/" target="_blank" rel="noopener">Prime Video</a>
+      <a href="https://www.hulu.com/" target="_blank" rel="noopener">Hulu</a>
+      <a href="https://tv.youtube.com/" target="_blank" rel="noopener">YouTube TV</a>
+      <a href="https://www.fubo.tv/" target="_blank" rel="noopener">Fubo</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <strong>FOX KIDS PLANT</strong><br>
+  An independent fan-made programme guide. Not affiliated with, endorsed by, or sponsored by the networks or streaming services listed.<br>
+  Programme names and trademarks belong to their respective owners. No live broadcast or episode playback is provided.
+</footer>
+<script>
+const quboTitles = [
+"3-2-1 Penguins!","My Friend Rabbit","Turbo Dogs","Shelldon","Boo!","Sitting Ducks",
+"LarryBoy: The Cartoon Adventures","VeggieTales","Postman Pat","Maisy","BraveStarr",
+"He-Man and the Masters of the Universe","She-Ra: Princess of Power","Ghostbusters",
+"Guess with Jess","Pecola","Rupert","Babar","Jane and the Dragon","Jacob Two-Two",
+"Being Ian","Class of the Titans","Pearlie","Spliced","Willa's Wild Life",
+"Pippi Longstocking","Rescue Heroes","George and Martha","Grossology","Ned's Newt",
+"Stickin' Around","Scaredy Squirrel","Sidekick","Maggie and the Ferocious Beast",
+"Mike the Knight","Babar and the Adventures of Badou","Super BOOMi","Franklin","Dragon",
+"Sammy's Story Shop","Animorphs","Dear America","I Spy","The Royal Diaries","Timeblazers",
+"Artzooka!","Harry and His Bucket Full of Dinosaurs","Joe & Jack","Wibbly Pig","Look Kool",
+"Monkey See, Monkey Do","Bubu and the Little Owls","Finding Stuff Out","Vivi",
+"The Magic School Bus Rides Again","Science Max","Where on Earth Is Carmen Sandiego?",
+"Archie's Weird Mysteries","Sherlock Holmes in the 22nd Century","Monster Math Squad",
+"Madeline","The Adventures of Paddington Bear","Pirates: Adventures in Art",
+"Inspector Gadget","Fireman Sam","Rainbow Ruby","Jerry and the Raiders","Kate & Mim-Mim",
+"You & Me","Dive, Olly, Dive!","Pet Alien","Cosmic Quantum Ray","The DaVincibles",
+"Animal Atlas","Zoo Clues","Safari Tracks","Miss BG","Gofrette",
+"Animal Exploration with Jarod Miller","Mighty Machines","The Mysteries of Alfred Hedgehog",
+"Dex Hamilton: Alien Entomologist","Taste Buds","Eliot Kid","Sandra, the Fairytale Detective",
+"Culture Click","Funniest Pets & People","Famous 5: On the Case",
+"Sally Bollywood: Super Detective","Mickey's Farm","The Choo Choo Bob Show",
+"Denver, the Last Dinosaur","This Is Daniel Cook.","Nutri Ventures","Secret Millionaires' Club",
+"Xploration Animal Science","Giver","Chirp","Stella and Sam","Messy Goes to Okido",
+"Justin Time","The Busy World of Richard Scarry","Miss Spider's Sunny Patch Friends",
+"ToddWorld","Doki","Fishtronaut","Meteor and the Mighty Monster Trucks","Theodore Tugboat",
+"Elliot Moose","Lamb Chop's Play-Along","Marvin the Tap-Dancing Horse","The Zula Patrol",
+"Adventures from the Book of Virtues","The Magic School Bus","Jakers! The Adventures of Piggley Winks",
+"Anne of Green Gables: The Animated Series","Timothy Goes to School","Raggs",
+"Thomas Edison's Secret Lab","Bob the Builder (2015)","Bob the Builder (1999)",
+"Jay Jay the Jet Plane","Ask Me!","The Zimmer Twins","Vitaminix","Animal Bites",
+"Wibbly Pig Shorts","Zerby Derby Shorts","Ruby's Studio","I'm an Animal","BatteryPOP"
+];
+const shows = quboTitles.map(name=>({name,network:"Qubo"})).concat([
+{name:"ReBoot",network:"FOX"},{name:"Horrid Henry",network:"CITV"},
+{name:"6teen",network:"Other"},{name:"Total Drama",network:"Other"},
+{name:"Little Bear",network:"Nickelodeon"},
+{name:"Dragon Tales",network:"Disney Channel"},{name:"Kim Possible",network:"Disney Channel"},
+{name:"The Proud Family",network:"Disney Channel"},{name:"Phineas and Ferb",network:"Disney Channel"},
+{name:"Recess",network:"Disney Channel"},{name:"Lilo & Stitch: The Series",network:"Disney Channel"},
+{name:"That's So Raven",network:"Disney Channel"},{name:"The Suite Life of Zack & Cody",network:"Disney Channel"},
+{name:"American Dragon: Jake Long",network:"Disney Channel"},{name:"Mickey Mouse Clubhouse",network:"Disney Channel"},
+{name:"Codename: Kids Next Door",network:"Cartoon Network"},{name:"Ed, Edd n Eddy",network:"Cartoon Network"},
+{name:"Dexter's Laboratory",network:"Cartoon Network"},{name:"The Powerpuff Girls",network:"Cartoon Network"},
+{name:"Courage the Cowardly Dog",network:"Cartoon Network"},{name:"Johnny Bravo",network:"Cartoon Network"},
+{name:"Foster's Home for Imaginary Friends",network:"Cartoon Network"},{name:"Chowder",network:"Cartoon Network"},
+{name:"The Grim Adventures of Billy & Mandy",network:"Cartoon Network"},
+{name:"The Fairly OddParents",network:"Nickelodeon"},{name:"SpongeBob SquarePants",network:"Nickelodeon"},
+{name:"Danny Phantom",network:"Nickelodeon"},{name:"Jimmy Neutron",network:"Nickelodeon"},
+{name:"Rugrats",network:"Nickelodeon"},{name:"Hey Arnold!",network:"Nickelodeon"},
+{name:"The Wild Thornberrys",network:"Nickelodeon"},{name:"Rocket Power",network:"Nickelodeon"},
+{name:"Dora the Explorer",network:"Nickelodeon"},{name:"Go, Diego, Go!",network:"Nickelodeon"},
+{name:"The Simpsons",network:"FOX"},{name:"Tom and Jerry",network:"Boomerang"},
+{name:"The Flintstones",network:"Boomerang"},{name:"The Jetsons",network:"Boomerang"},
+{name:"Scooby-Doo",network:"Boomerang"},{name:"Looney Tunes",network:"Boomerang"},
+{name:"The Yogi Bear Show",network:"Boomerang"},{name:"Sooty",network:"CITV"},
+{name:"Art Attack",network:"CITV"},{name:"Grizzly Tales for Gruesome Kids",network:"CITV"}
+]);
+const grid=document.getElementById("showGrid"),count=document.getElementById("count"),search=document.getElementById("showSearch");
+let activeFilter="All";
+function render(){
+ const term=search.value.trim().toLowerCase();
+ const list=shows.filter(s=>(activeFilter==="All"||s.network===activeFilter)&&s.name.toLowerCase().includes(term));
+ grid.replaceChildren();
+ if(!list.length){const empty=document.createElement("p");empty.className="empty";empty.textContent="No programmes match your search.";grid.append(empty);}
+ list.forEach(show=>{
+  const card=document.createElement("article");card.className="card";
+  const poster=document.createElement("div");poster.className="poster";poster.textContent=show.name;
+  const info=document.createElement("div");info.className="card-info";
+  const title=document.createElement("h3");title.textContent=show.name;
+  const label=document.createElement("p");label.textContent=show.network;
+  info.append(title,label);card.append(poster,info);grid.append(card);
+ });
+ count.textContent=list.length+" programmes";
+}
+document.getElementById("filters").addEventListener("click",event=>{
+ const button=event.target.closest("button[data-filter]");if(!button)return;
+ document.querySelectorAll("#filters .filter").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");activeFilter=button.dataset.filter;render();
+});
+search.addEventListener("input",render);
+render();
+</script>
+</body>
+</html>
